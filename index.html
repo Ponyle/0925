@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>突发性水污染事件卫生应急处置虚拟仿真实验项目</title>
+		<style>
+			#app{
+				background-color: #f2f2f2;
+			}
+		[v-cloak]{
+			display: none;
+	
+		}
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			ul,ol,li{list-style: none;margin: 0;padding: 0;}
+			a{text-decoration: none;cursor: pointer;border: none;outline: none;color: black}
+			.top{
+				width: 100%;
+				height: 120px;
+				background: cadetblue;
+			}
+			.nav{
+				width: 1200px;
+				height: 120px;
+				margin: 0 auto;
+				overflow: hidden;
+				background: cadetblue;background: cadetblue;
+				border-bottom: none;
+			}
+			.nav-ban{
+				width: 1200px;
+				height: 40px;
+				border: 1px solid #ccc;
+				margin: 0 auto;
+				border-radius: 8px;
+			}
+			.nav-ban ul li {
+				font-size: 16px;
+			}
+			/*.nav-ban ul li a:hover{*/
+			/*	color: skyblue;*/
+			/*}*/
+			a:hover{
+				color: #FF6600;
+			}
+			.section{
+				width: 1200px;
+				height: 320px;
+				margin: 0 auto;
+				margin-top: 50px;
+				border-radius: 8px;
+				background: #fff;
+				border: 1px solid #ccc;
+				box-shadow: 0 1px 4px rgba(6, 6, 6, 0.54), 0 0 20px rgba(0, 0, 0, 0.2) inset;
+			}
+
+			.l_section{
+
+				width: 400px;
+				padding: 20px;
+			}
+			.l_video{
+				margin-top: 10px;
+				height: 240px;
+				
+			}
+			.r_section{
+				width: 800px;
+				
+				padding: 10px 0;
+			}
+			.r_h2{
+				font-size: 20px;
+				padding: 5px 60px;
+			}
+			p{
+				font-size: 15px;
+				padding: 3px 50px;
+
+			}
+			.button{
+				width: 256px;
+				background-color: #ccc; /* Green */
+				border: none;
+				color: black;
+				padding: 6px 22px;
+				text-align: center;
+				text-decoration: none;
+				
+				display: inline-block;
+				font-size: 16px;
+				cursor: pointer;
+				float: left;
+				margin-top: 10px;
+				margin-left: 20px;
+				
+			}
+			.button:hover {
+				background-color: lightslategray;
+				color: #fff;
+			}
+			.nav_data{
+				width: 1200px;
+				margin: 0 auto;
+				height: 320px;
+				margin-top: 50px;
+			}
+			.data_common{
+				width: 400px;
+				height: 100%;
+				border-radius: 8px;
+				background: #fff;
+				box-shadow: 0 1px 4px rgba(6, 6, 6, 0.54), 0 0 20px rgba(0, 0, 0, 0.2) inset;
+			}
+			.data{
+				height: 40px;
+				line-height: 40px;
+				border-radius: 8px;
+				align-items: center;
+				background: skyblue;
+
+			}
+			.data_zl{
+				padding: 10px 20px 0;
+				border-bottom: 1px solid #c6c6c6;
+
+			}
+			.data_zl li{
+				height: 34px;
+				line-height: 34px;
+				font-size: 14px;
+				color: #333;
+				border-bottom: 1px dotted #c6c6c6;
+				overflow: hidden;white-space: nowrap;text-overflow: ellipsis;
+			}
+			。data_zl li a{
+				color: #222;
+			}
+
+			.data_yl{
+				    padding: 10px 46px;
+
+			}
+			.data_yl li{
+				float: left;
+				width: 50%;
+				height: 30px;
+				
+				line-height: 30px;
+			}
+			.project_b li{
+				float: left;
+				height: 120px;
+				width: 172px;
+				margin: 10px;
+			}
+			.project_b li a{
+				color: #333;
+				display: block;
+				text-align: center;
+				font-size: 14px;
+				padding-top: 70px;
+			}
+
+			.data_news li{
+				font-size: 14px;
+				border-bottom: 1px dotted #c6c6c6;
+				color: #666;
+				height: 32px;
+				line-height: 32px;
+				margin: 6px;
+
+			}
+			.data_news li a{
+
+			}
+
+			.nav_sm{
+				width: 1200px;
+				margin: 0 auto;
+				height:300px;
+				margin-top: 50px;
+			}
+
+			.data_sm{
+				width: 400px;
+				height: 100%;
+				background: #fff;
+				box-shadow: 0 1px 4px rgba(6, 6, 6, 0.54), 0 0 20px rgba(0, 0, 0, 0.2) inset;
+
+			}
+
+
+
+			.sm_common{
+				border-bottom: 1px dotted #ddd;
+				padding:12px 30px
+			}
+			.flex{
+				display: flex;
+			}
+			.a-c{
+				align-items: center;
+			}
+			.j-c{
+				justify-content: space-around;
+			}
+			.j-b{
+				justify-content: space-between;
+			}
+			.j-a{
+				justify-content: center;
+			}
+
+
+
+
+			body {
+				background: #eee;
+				font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+				font-size: 14px;
+				color:#000;
+				margin: 0;
+				padding: 0;
+			}
+			.swiper-container {
+				width: 646px;
+				height: 229px;
+				swiper-theme-color: skyblue;/* 设置Swiper风格 */
+
+				--swiper-navigation-size: 30px;/* 设置按钮大小 */
+			}
+			
+			.swiper-slide {
+				text-align: center;
+				font-size: 18px;
+				background: #fff;
+
+				/* Center slide text vertically */
+				display: -webkit-box;
+				display: -ms-flexbox;
+				display: -webkit-flex;
+				display: flex;
+				-webkit-box-pack: center;
+				-ms-flex-pack: center;
+				-webkit-justify-content: center;
+				justify-content: center;
+				-webkit-box-align: center;
+				-ms-flex-align: center;
+				-webkit-align-items: center;
+				align-items: center;
+			}
+			
+			.c_active{
+				color: #FF6600;
+			}
+			
+			.pro{
+				color: #333;font-weight: bold;
+			}
+				
+				
+				.foot{
+					background: #333;
+					
+				}
+				.foot-nav{
+					width: 1200px;
+					margin: 0 auto;
+					height: 120px;
+					background: #333;
+				}
+				.foot-lmain{
+					font-size: 16px;
+					padding: 10px;
+					float: left;
+					margin-top: 30px;
+					color: #fff;
+				}
+				.foot-rmain{
+					font-size: 16px;
+					float: left;
+						padding: 10px;
+					margin-top: 30px;
+					color: #fff;
+				}
+				
+		</style>
+		<link rel="stylesheet" href="//at.alicdn.com/t/font_2098750_8nkh722ypqu.css">
+		<link rel="stylesheet" href="./swiper-bundle.css">
+	</head>
+	<body>
+	<div id="app" v-cloak>
+		<div class="top">
+			<div class="nav flex j-c a-c">
+				<div><img src="./v-img/head.png" width="460" ></div>
+				<div><img src="./v-img/swrtitle.png" width="500" ></div>
+			</div>
+		</div>
+		<div class="nav-ban">
+			<ul class="flex a-c j-c" style="height:100%">
+				<li><a href="./index.html">首页</a></li>
+				<li><a href="#">实验教学项目描述</a></li>
+				<li><a href="./Team.html">实验项目教学服务团队</a></li>
+				<li><a href="#">网络相关要求</a></li>
+				<li><a href="#">项目架构及研发技术</a></li>
+				<li><a href="#">实验教学项目特色</a></li>
+				<li><a href="#">持续建设服务计划</a></li>
+				<li><a href="./pdf/swrsbs.pdf" target="_blank">项目申报书</a></li>
+			</ul>
+		</div>
+		<div class="section flex ">
+			<div class="l_section">
+				<div style="font-size: 18px;font-weight: bold;" :class="">
+					<a href="#" @click="changeVideo1" :class="l_state?'c_active':''">简介视频</a>&nbsp/&nbsp <a href="#" @click="changeVideo2"  :class="l_state?'':'c_active'">教学引导视频</a>
+				</div>
+				<div class="l_video" v-show="l_state">
+					<video ref="jjsp"   controls="controls" style="width: 400px;">
+								            <source src="./video/突发水污染简介视频_batch.mp4" type="video/mp4">
+											 <source src="movie.ogg" type="video/ogg">
+											  您的浏览器不支持 HTML5 video 标签。
+							            </video>
+				</div>
+				<div class="l_video" v-show="!l_state">
+					<video  ref="ydsp"  controls="controls" style="width: 400px;">
+								            <source src="./video/突发水污染教学引导视频_batch.mp4" type="video/mp4">
+											 <source src="movie.ogg" type="video/ogg">
+											  您的浏览器不支持 HTML5 video 标签。
+							            </video>
+				</div>
+
+			</div>
+			<div class="r_section">
+
+					<h2 class="r_h2" ><i style="font-size: 18px;padding: 0 10px;" class="iconfont icon-xiangmumingcheng"></i>突发性水污染事件卫生应急处置虚拟仿真实验项目</h2>
+					<p><span class="pro">所属分类：</span>公共卫生与预防医学类</p> 
+					<p><span class="pro">实验学时：</span>4  <span class="pro" style="margin-left: 33px;">实验操作步数：</span> 12</p>
+					<p><span class="pro">实验项目负责人：</span>XXX <span class="pro" style="margin-left: 33px;">联系电话：</span> 123456789012</p>
+				<p style="overflow:hidden; text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;">
+					<span class="pro">实验目的：</span>处置虚拟仿真实验项目突发性水污染事件卫生应急处置虚拟仿真实验项目染事件卫生应急处置虚拟仿真实验项目染事件卫生应急处置虚拟仿真实验项目染事件卫生应急处置虚拟仿真实验项目染事件卫生应急处置虚拟仿真实验项目
+					</span>
+				</p>
+				<p><span class="pro">实验简介：</span>突发性水污染事件卫生应急处置虚拟仿真实验项目突发性水污染事件卫生应急处置虚拟仿真实验项目突发性水污染事件卫生应急处置虚拟仿真实验项目突发性水污染事件卫生应急处置虚拟仿</p>
+				<p><button class="button">进入实验</button></p>
+			</div>
+		</div>
+		<div class="nav_data flex ">
+			<div  class="data_common" >
+				<div class="data flex j-b a-c" >
+
+					<div class="flex a-c" style="padding: 0 10px;"><i class="iconfont icon-ziliao" style="font-size: 22px;color: cornsilk;"></i> &nbsp <span style="font-size: 15px;">实验课程资料</span></div>
+					<div style="padding: 0 10px;"><a href="#"><i class="iconfont icon-more2" style="font-size: 18px;"></i></a></div>
+				</div>
+				<div class="data_zl">
+					<ul>
+						<li><a href="#">XXXXXXXXXXXXXXX</a></li>
+						<li><a href="#">XXXXXXXXXXXXXXXXX</a></li>
+						<li><a href="#">XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxxxxxxxx</a></li></ul>
+				</div>
+				<div class="data_yl">
+					<ul>
+						<li><a href="#"><i class="iconfont icon-point"></i>实验原理</a></li>
+						<li><a href="#"><i class="iconfont icon-point"></i>实验仪器设备</a></li>
+						<li><a href="#"><i class="iconfont icon-point"></i>实验材料</a></li>
+						<li><a href="#"><i class="iconfont icon-point"></i>实验教学方法</a></li>
+						<li><a href="#"><i class="iconfont icon-point"></i>实验方法与步骤</a></li>
+						<li><a href="#"><i class="iconfont icon-point"></i>实验结果与结论要求</a></li>
+						<li><a href="#"><i class="iconfont icon-point"></i>实验考核要求</a></li>
+						<li><a href="#"><i class="iconfont icon-point"></i>面向学生要求</a></li>
+
+					</ul>
+				</div>
+			</div>
+
+			<div class="data_common"  style="margin-left: 10px;" >
+				<div class="data ">
+					<div class="flex a-c"style="padding: 0 10px;"><i class="iconfont icon-xueqingfenxixuanzhong" style="    font-size: 22px;color: cornsilk;"></i> &nbsp 实验教学项目特色</div>
+					<div class="project_b">
+						<ul>
+							<li style="background: url(./v-img/book.svg) #f2f2f2 no-repeat center 10px;" ><a href="#">实验方案设计思路</a></li>
+							<li style="background: url(./v-img/jscx.svg) #f2f2f2 no-repeat center 10px;"><a href="#">教学方法创新</a></li>
+							<li style="background: url(./v-img/tx.svg) #f2f2f2 no-repeat center 10px;"><a href="#">评价体系创新</a></li>
+							<li style="background: url(./v-img/kz.svg) #f2f2f2 no-repeat center 10px;"><a href="#">对传统教学的延伸与拓展</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="data_common"  style="margin-left: 10px;" >
+				<div class="data flex j-b a-c">
+
+					<div class="flex a-c" style="padding: 0 10px;"><i class="iconfont icon-tongzhi1" style="    font-size: 20px;color:#333;"></i> &nbsp 通知公告</div>
+					<div style="padding: 0 10px;"><a href="#"><i class="iconfont icon-more2" style="font-size: 18px;"></i></a></div>
+				</div>
+				<div STYLE="padding: 10px 20px 0;">
+					<div class="data_news">
+						<ul>
+							<li style="">
+								<a href="#">XXXXXXXXXXXXXXXXXXXXX <span style="float: right">2020-09-24</span></a>
+							</li>
+							<li style="">
+								<a href="#">XXXXXXXXXXXXXXXXXXXXX <span style="float: right">2020-09-24</span></a>
+							</li>
+							<li style="">
+								<a href="#">XXXXXXXXXXXXXXXXXXXXX <span style="float: right">2020-09-24</span></a>
+							</li>
+							<li style="">
+								<a href="#">XXXXXXXXXXXXXXXXXXXXX <span style="float: right">2020-09-24</span></a>
+							</li>
+							<li style="">
+								<a href="#">XXXXXXXXXXXXXXXXXXXXX <span style="float: right">2020-09-24</span></a>
+							</li>
+							<li style="">
+								<a href="#">XXXXXXXXXXXXXXXXXXXXX <span style="float: right">2020-09-24</span></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+		<div class="nav_sm flex">
+			<div class="data_sm">
+				<div>
+					<h2 style="font-size: 15px;
+					height: 40px;
+					line-height: 40px;
+					font-weight: bold;
+					text-align: center;
+					border-bottom: 2px solid #eee;
+					color: #2b73a6;">项目架构及研发技术 </h2>
+				</div>
+				<div class="flex a-c j-c" style="height: 60px">
+					<div><a href="#"><i class="iconfont icon-point"></i>系统架构图及简要说明</a></div>
+					<div><a href="#"><i class="iconfont icon-point"></i>实验教学项目</a></div>
+
+				</div>
+				<h2 style="font-size: 15px;
+					height: 40px;
+					line-height: 40px;
+					font-weight: bold;
+					text-align: center;
+					border-bottom: 2px solid #eee;
+					color: #2b73a6;">项目架构及研发技术 </h2>
+				<div  style="height: 60px;">
+					<div class="sm_common" style=""><a href="#"><i class="iconfont icon-point"></i>项目持续建设与服务计划</a></div>
+					<div class="sm_common" ><a href="#"><i class="iconfont icon-point"></i>面向高校的教学推广应用计划</a></div>
+					<div class="sm_common" ><a href="#"><i class="iconfont icon-point"></i>面对社会的推广应用计划</a></div>
+
+				</div>
+			</div>
+
+			<div class="data_sm"  style="margin-left: 10px;width: 800px" >
+				<div class="data flex j-b a-c">
+
+					<div class="flex a-c" style="padding: 0 10px;"><i class="iconfont icon-tuanduisvg1" style="font-size: 30px;"></i>&nbsp实验项目教学服务团队</div>
+					<div style="padding: 0 10px;"><a href="./Team.html" target="_blank"><i class="iconfont icon-more2" style="font-size: 18px;"></i></a></div>
+				</div>
+
+				<div style="margin-top: 6px">
+					<div class="swiper-container">
+						<div class="swiper-wrapper" >
+
+								<div class="swiper-slide" style="position:relative;" >
+									<img src="./v-img/zj/lhy.jpg" alt="" height="196"  >
+									<p style="position:absolute;bottom: -4px;width: 150px;">李煌元 教授</p>
+								</div>
+
+							<div class="swiper-slide" style="position:relative;" >
+								<img src="./v-img/zj/llc.jpg" alt="" height="188"  >
+								<p style="position:absolute;bottom: -4px;width: 150px;">李昱辰 副教授</p>
+							</div>
+
+							<div class="swiper-slide" style="position:relative;" >
+								<img src="./v-img/zj/zr.jpg" alt="" height="188"  >
+								<p style="position:absolute;bottom: -4px;width: 150px;">赵苒 副教授</p>
+							</div>
+
+
+
+						</div>
+						<div class="swiper-button-prev"></div>
+						<div class="swiper-button-next"></div>
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+		
+		<div style="width: 1200px;margin:0 auto;margin-top: 50px;background-color: #fff;" class="flex">
+			<div style="padding: 10px;"><img src="./v-img/wlgx.svg" alt="" style="vertical-align:middle;padding: 0 6px;"><span style="">网络共享情况</span></div>
+			<div ref="charts" style="width: 800px;height:350px;">
+			</div>
+			<div style="width: 100px;flex-wrap: wrap;" >
+				<div style="padding: 10px;background-color: skyblue;height: 50px;width: 180px;border-radius: 8px;font-size:17px;margin-top: 100px; position: relative;">
+					<div style="position: absolute;top: 10px;left: 10px;">总使用量</div>
+					<div style="position: absolute;top: 38px;left: 66px;font-weight: bold;letter-spacing: 1px;font-size: 18px;">{{UserTotal}}</div>
+					</div>
+					<div style="padding: 10px;background-color: #C23531;height: 50px;width: 180px;border-radius: 8px;font-size:17px;margin-top:50px; position: relative;">
+						<div style="position: absolute;top: 10px;left: 10px;color: #fff;">总浏览量</div>
+						<div style="position: absolute;top: 38px;left: 66px;font-weight: bold;letter-spacing: 1px;font-size: 18px;color:#fff">{{prewTotal}}</div>
+						</div>
+		
+			</div>
+			
+		</div>
+
+		<div style="width: 100%;background: slateblue;height: 220px;margin-top: 50px">
+			
+
+			<div style="width: 1200px;margin:0 auto;height: 100%;height: 220px;background: slateblue;" class="flex a-c j-c">
+				<div >
+					<img src="./v-img/website.svg" alt="" width="80" height="80" style="display: block;">
+					<div style="color: transparent;font-size: 20px;background-color : pink;text-shadow : rgba(255,255,255,0.5) 0 5px 6px, rgba(255,255,255,0.2) 1px 3px 3px;-webkit-background-clip : text;">网络要求</div>
+				</div>
+				<div>	
+				<div style="width: 700px;">
+					<button class="button button4">有效链接地址</button>
+					<button class="button button4">网络条件要求</button>
+					<button class="button button4">用户操作系统要求</button>
+					<button class="button button4">用户废操作系统软件配置要求</button>
+					<button class="button button4">用户硬件配置要求</button>
+					<button class="button button4">用户特殊外置硬件要求</button>
+				</div>
+				
+				</div>
+			</div>
+		</div>
+		<div class="foot" >
+			<div class="foot-nav">
+				<div class="flex a-c j-c">
+					<div class="foot-lmain">
+						<div >建设单位：福建医科大学公共卫生学院</div>
+						<div style="margin-top: 10px;">技术支持：上海梦之路数字科技有限公司</div>
+						</div>
+						<div class="foot-rmain" style="
+						    ">
+							<div>台江校区：福州市交通路88号（350004）</div>
+							<div style="margin-top: 10px;">上街校区：福州市闽侯县上街镇学园路1号（350108）</div>
+							</div>
+					
+				</div>
+					
+			</div>
+		</div>
+	</div>
+	</body>
+	<script src="./vue.js"></script>
+	<script src="./axios.min.js"></script>
+	 <script src="./echarts.js"></script>
+	<script src="./swiper-bundle.js"></script>
+
+
+	<script>
+		new Vue({
+			el:'#app',
+			data(){
+				return{
+					l_state:true,
+					ls:[],
+					UserTotal:0,
+					prewTotal:0,
+				}
+			},
+			mounted(){
+			
+	
+				
+				this.init_swiper()
+				this.init_echarts()
+
+			},
+			created(){
+				// this.init_data()
+			},
+			methods:{
+				 async init_swiper(){
+					var swiper = new Swiper('.swiper-container', {
+						loop: true,
+						speed: 3000,
+						slidesPerView: 3,
+						spaceBetween: 30,
+						slidesPerGroup: 3,
+					
+						autoplay: {
+							delay: 3000,
+							stopOnLastSlide: false,
+							disableOnInteraction: true,
+						},
+						navigation: {
+							nextEl: '.swiper-button-next',
+							prevEl: '.swiper-button-prev',
+						},
+						pagination: {
+							el: '.swiper-pagination',
+							clickable: true,
+						},
+					});
+				},
+					changeVideo1(){
+						this.l_state=true
+						this.$refs.ydsp.pause()
+					},
+					changeVideo2(){
+						this.l_state=false
+						this.$refs.jjsp.pause()
+					},
+					
+			async init_echarts(){
+					let res = await axios.get('./menu.json')
+					let ls = res.data
+					this.UserTotal = ls.usage_num
+					this.prewTotal = ls.browsing_num+2020
+					
+					// console.log(ls.browsing_json)
+				        var myChart = echarts.init(this.$refs.charts);
+				        var option = {
+				             grid: {
+				                     left: '13%',
+				                     right: '4%',
+				                     bottom: '3%',
+				                     containLabel: true
+				                      },
+				            tooltip:{
+								      trigger: 'axis',
+				            	 axisPointer: {
+				            	            type: 'shadow'
+				            	        }
+				            },
+				            legend: {
+				                data:['实验项目使用量','实验项目浏览量'],
+								 right:'3%',
+								 top:'3%',
+								                        
+				            },
+				            xAxis: {
+				                data: ["9-21","9-22","9-23","9-24","9-25","9-26"]
+				            },
+				            yAxis: {},
+				            series: [{
+								color:['skyblue'],
+				                name: '实验项目使用量',
+								  barWidth : 25,
+				                type: 'bar',
+				                data: [15, 20, 36, 5, 8,12]
+				            },
+							{
+							    name: '实验项目浏览量',
+								  barWidth : 25,
+							    type: 'bar',
+							    data: [5, 10, 16, 15, 18, 10]
+							}],
+							
+				        };
+				
+				        // 使用刚指定的配置项和数据显示图表。
+				        myChart.setOption(option);
+			}
+			}
+		})
+	</script>
+</html>

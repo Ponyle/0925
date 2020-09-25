@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>实验项目教学服务团队</title>
+		<style>
+			#app {
+				background-color: #f2f2f2;
+			}
+
+			[v-cloak] {
+				display: none;
+			}
+
+			* {
+				padding: 0;
+				margin: 0;
+			}
+
+			ul,
+			ol,
+			li {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+
+			a {
+				text-decoration: none;
+				cursor: pointer;
+				border: none;
+				outline: none;
+				color: black
+			}
+
+			.flex {
+				display: flex;
+			}
+
+			.a-c {
+				align-items: center;
+			}
+
+			.j-c {
+				justify-content: space-around;
+			}
+
+			.j-b {
+				justify-content: space-between;
+			}
+
+			.j-a {
+				justify-content: center;
+			}
+
+			.top {
+				width: 100%;
+				height: 120px;
+				background: cadetblue;
+			}
+
+			.nav {
+				width: 1200px;
+				height: 120px;
+				margin: 0 auto;
+				overflow: hidden;
+				background: cadetblue;
+				background: cadetblue;
+				border-bottom: none;
+			}
+
+			.nav-ban {
+				width: 1200px;
+				height: 40px;
+				border: 1px solid #ccc;
+				margin: 0 auto;
+				border-radius: 8px;
+			}
+
+
+			a:hover {
+				color: #FF6600;
+			}
+
+			.img_common {
+				margin: 10px 30px;
+			}
+
+
+
+
+
+			.name {
+				font-size: 18px;
+				font-weight: bold;
+			}
+
+			.major {
+				font-size: 14px;
+				color: #b0b0b0;
+			}
+
+			.address {
+				padding: 0 10px;
+				overflow: hidden;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				font-size: 13px;
+				color: #b0b0b0;
+			}
+
+			.work {
+				padding: 6px 10px;
+				overflow: hidden;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				font-size: 13px;
+				color: #b0b0b0;
+			}
+
+			.introduce {
+				float: right;
+				font-size: 13px;
+				border: 2px solid skyblue;
+				border-radius: 8px;
+				color: skyblue;
+				width: 65px;
+				text-align: center;
+			}
+
+			.xx {
+				width: 213px;
+				height: 112px;
+				background-color: #fff;
+				margin-top: -4px;
+			}
+
+			.line {
+				width: 100%;
+				border-bottom: 3px solid #55A1D9;
+			}
+
+			.line-img {
+				padding: 5px 0;
+			}
+
+
+			.team-xx {
+				width: 213px;
+				height: 84px;
+				background-color: #fff;
+				margin-top: -4px;
+			}
+
+
+
+
+
+
+
+			.foot-nav {
+				width: 1200px;
+				margin: 0 auto;
+				height: 120px;
+				background: #333;
+			}
+
+			.foot-lmain {
+				font-size: 16px;
+				padding: 10px;
+				float: left;
+				margin-top: 30px;
+				color: #fff;
+			}
+
+			.foot-rmain {
+				font-size: 16px;
+				float: left;
+				padding: 10px;
+				margin-top: 30px;
+				color: #fff;
+			}
+
+			.foot-ban {
+				width: 100%;
+				background-color: #333;
+
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app" v-cloak>
+			<div class="top">
+				<div class="nav flex j-c a-c">
+					<div><img src="./v-img/head.png" width="460"></div>
+					<div><img src="./v-img/swrtitle.png" width="500"></div>
+				</div>
+			</div>
+			<div class="nav-ban">
+				<ul class="flex a-c j-c" style="height:100%">
+					<li><a href="./index.html">首页</a></li>
+					<li><a href="">实验教学项目描述</a></li>
+					<li><a href="./Team.html">实验项目教学服务团队</a></li>
+					<li><a href="">网络相关要求</a></li>
+					<li><a href="">项目架构及研发技术</a></li>
+					<li><a href="">实验教学项目特色</a></li>
+					<li><a href="">持续建设服务计划</a></li>
+					<li><a href="">项目申报书</a></li>
+				</ul>
+			</div>
+			<div class="team-content">
+				<div style="width: 1200px;margin: 30px auto;margin-top: 40px;">
+					<div class="line">
+						<img src="./v-img/team/main.png" alt="" class="line-item">
+					</div>
+					<div style="margin-top: 30px;flex-wrap: wrap;display: flex;">
+						<div class="img_common">
+							<img src="./v-img/zj/lhy.jpg" alt="">
+							<div class="xx">
+								<p style="padding:6px 10px;"><span class="name">李煌元</span>&nbsp <span class="major">教授</span></p>
+								<div class="address">所在单位：福建医科大学公共卫生学院</div>
+								<div class="work">承担任务：软件研发，项目推广</div>
+								<div class="introduce">查看介绍</DIV>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+			<div style="width: 1200px;margin: 0 auto;margin-top: 100px;">
+				<div class="line">
+					<img src="./v-img/team/team.png" alt="" class="line-item">
+				</div>
+				<div style="margin-top: 30px;flex-wrap: wrap;display: flex;">
+					<div class="img_common" v-for="item in teamList">
+						<img :src="item.avatar" alt="" height="229px" width="213">
+						<div class="team-xx">
+							<p style="padding:6px 10px;"><span class="name">{{item.name}}</span>&nbsp <span class="major">{{item.major}}</span></p>
+							<div class="address">{{item.address}}</div>
+							<div class="work">{{item.work}}</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<div class="foot-ban">
+			<div class="foot-nav">
+				<div class="flex a-c j-c">
+					<div class="foot-lmain">
+						<div>建设单位：福建医科大学公共卫生学院</div>
+						<div style="margin-top: 10px;">技术支持：上海梦之路数字科技有限公司</div>
+					</div>
+					<div class="foot-rmain" style="
+						    ">
+						<div>台江校区：福州市交通路88号（350004）</div>
+						<div style="margin-top: 10px;">上街校区：福州市闽侯县上街镇学园路1号（350108）</div>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+		</div>
+	</body>
+	<script src="./vue.js"> </script>
+	<script>
+		new Vue({
+			el: '#app',
+			mounted(){
+				// console.log(window.location.href)
+			},
+			data() {
+				return {
+					teamList: [{
+							name: "李煌元",
+							major: "教授",
+							address: "福建医科大学公共卫生学院",
+							work: "承担任务：软件研发，项目推广",
+							avatar: "./v-img/zj/lhy.jpg"
+						},
+						{
+							name: "李昱辰",
+							major: "副教授",
+							address: "福建医科大学公共卫生学院",
+							work: "承担任务：软件研发，教学实施",
+							avatar: "./v-img/zj/llc.jpg"
+						},
+						{
+							name: "赵苒",
+							major: "副教授",
+							address: "所在单位：厦门大学公共卫生学院",
+							work: "承担任务：软件研发，教学实施",
+							avatar: "./v-img/zj/zr.jpg"
+						},
+						{
+							name: "陈小旋",
+							major: "高级工程师",
+							address: "所在单位：厦门大学公共卫生学院",
+							work: "承担任务：软件研发，教学实施",
+							avatar: "./v-img/zj/cxx.jpg"
+						},
+						{
+							name: "吴传城",
+							major: "讲师",
+							address: "所在单位：福建医科大学公共卫生学院",
+							work: "承担任务：软件研发，教学实施",
+							avatar: "./v-img/zj/wcc.jpg"
+						},
+						{
+							name: "范春",
+							major: "教授",
+							address: "所在单位：厦门大学公共卫生学院",
+							work: "承担任务：项目指导，项目推广",
+							avatar: "./v-img/zj/fc.jpg"
+						},
+						{
+							name: "张文昌",
+							major: "教授",
+							address: "所在单位：福建医科大学公共卫生学院",
+							work: "承担任务：项目指导，项目推广",
+							avatar: "./v-img/zj/zwc.jpg"
+						},
+						{
+							name: "林忠宁",
+							major: "教授",
+							address: "所在单位：福建医科大学公共卫生学院",
+							work: "承担任务：项目指导，项目推广",
+							avatar: "./v-img/zj/lzn.jpg"
+						},
+
+
+						{
+							name: "刘宝英",
+							major: "教授",
+							address: "所在单位：福建医科大学公共卫生学院",
+							work: "承担任务：项目指导，项目推广",
+							avatar: "./v-img/zj/lby.jpg"
+						},
+						{
+							name: "刘瑾",
+							major: "副教授",
+							address: "所在单位：福建医科大学公共卫生学院",
+							work: "承担任务：教学实施，软件完善",
+							avatar: "./v-img/zj/lj.jpg"
+						},
+						{
+							name: "陈静威",
+							major: "高级工程师",
+							address: "所在单位：厦门大学公共卫生学院",
+							work: "承担任务：项目实施,平台管理",
+							avatar: "./v-img/zj/cjw.jpg"
+						},
+						{
+							name: "朱建林",
+							major: "副教授",
+							address: "所在单位：福建医科大学公共卫生学院",
+							work: "承担任务：教学实施，软件完善",
+							avatar: "./v-img/zj/zjl.jpg"
+						},
+					],
+					
+				}
+			},
+
+		})
+	</script>
+</html>

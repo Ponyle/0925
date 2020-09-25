@@ -1,0 +1,68 @@
+@charset "utf-8";
+/******global****/
+*{margin: 0;padding: 0;}
+body,html{ height:100%;}
+body,html,input,select{font:14px "黑体","微软雅黑",Tahoma, Verdana, Arial, Helvetica, sans-serif;outline: none; min-width:1000ps;}
+a{text-decoration: none;cursor: pointer;border: none;outline: none;}
+img {border: none;}
+ul,ol,li{list-style: none;margin: 0;padding: 0;}
+.clearfix:after{clear: both;content: " ";display: table;}
+.clearfix{*zoom:1;} 
+.clear{clear: both;width: 0;height: 0;overflow: hidden;}
+.hides{display: none;}
+.fleft{float: left;}
+.fright{float: right;}
+
+.textcenter{text-align:center;}
+.textindent{text-indent:2em;}
+.indent3{text-indent: 3em;}
+
+video::-internal-media-controls-download-button {
+    display:none;
+}
+
+video::-webkit-media-controls-enclosure {
+    overflow:hidden;
+}
+
+video::-webkit-media-controls-panel {
+    width: calc(100% + 30px); 
+}
+
+.juzhong{width:1200px;  margin:0 auto; }
+
+.top{width:100%; height:120px; position:fixed; top:0; left:0;  z-index: 99;}
+.top1{overflow: hidden; }
+.top1 img{ float: left;width: 500px;}
+.dhl{float: left; margin-left:190px;}
+.dhl ul {overflow: hidden;}
+.dhl ul li {float: left;}
+.dhl ul li a{font-size:18px; padding:10px 20px; display: block; margin-top:40px; color:#FFFFFF; border-radius: 3px; -moz-border-radius:3px; -webkit-border-radius: 3px; font-family: "微软雅黑";}
+.dhl ul li a:hover{ background: skyblue;  color:#000;}
+/* 469dff */
+#banner{background: url(../images/banner.png) no-repeat center; margin-top:120px; }
+.banner1{height:400px;}
+.zhutu{float:left; width:550px; margin-top:40px;}
+.title{float:left; width:650px;}
+.titletu{width:500px; margin-left:75px; margin-top:90px;}
+.jrsy{width:300px; margin-left:175px; margin-top:20px;}
+
+#video{width:100%; height:450px; background: #f2f2f2; z-index: 3;}
+.video1{overflow: hidden;}
+.left{width:600px; float: left;}
+.right{width:600px; float: right;}
+.bt{width:180px; margin:0 auto; font-size:26px; line-height:40px;  color: #3d95d5; text-align: center; display: block; border-bottom: 2px solid #3d95d5; padding-top:20px;}
+.bt1{font-size:22px; color: #9c9c9c; text-align: center; margin-top: 5px; padding-bottom:20px;}
+
+#buttom{width:100%; height:120px; background: #f9f9f9;}
+.buttom1{width:225px; margin:0 auto; overflow:hidden; padding-top:30px;}
+
+
+#tj{background: #EFF0F3;}
+
+.foot{width:100%; height:120px; background: cadetblue; margin-top: 120px;}
+.foot1 {overflow: hidden;}
+.foot1 img{width:350px; margin-top:22px; float: left;} 
+.lie1{width:280px; margin-left:50px; float: left; margin-top:30px;color: #fff}
+.lie2{width:450px; margin-left:50px; float: left; margin-top:30px; padding-bottom:12px;color: #fff}
+.lie1 li,.lie2 li{margin-top: 12px;}
